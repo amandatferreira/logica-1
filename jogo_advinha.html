@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+	function mostra (frase) {
+		document.write(frase);
+		pulaLinha();
+}
+
+	//Declaração de variaveis
+	<!-- Math.round - serve para arredondar o valor -->
+	<!-- Math.random - números randomicos gerados pelo sistema -->
+	<!-- Multiplicamos por 10 para que o número esteja dentro de 1-10. -->
+	
+	var numeroPensado = Math.round(Math.random() * 10);
+
+	//São 3 chances para acertar...
+	var tentativa = 1;
+	
+	//Lógica
+	while(tentativa <= 3){
+	
+	var chute = parseInt(prompt("Digite o seu chute..."));	
+	
+		if(chute == numeroPensado) {
+			mostra("Você acertou! O número sorteado foi... " + numeroPensado);
+			break;
+			
+		} else {
+			mostra("Você errou! Tente novamente...");
+		}
+			tentativa++;
+	}
+	
+</script>

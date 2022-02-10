@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<input/>
+<!-- <input/> <!-- Abre um campo para digitar, dentro do HTML -->
+<button>Compare com o meu segredo</button> <!-- Cria um botão dentro do HTML -->
+
+<!-- Chave script para código JavaScript -->
+<script>
+    function sorteia() {
+
+       return Math.round(Math.random() * 10);
+
+    }
+
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+
+        var numero = 1;
+
+        while(numero <= quantidade) {
+
+              var numeroAleatorio = sorteia();
+              var achou = false;
+
+              if (numeroAleatorio !== 0) {
+                     for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+                           if(segredos[posicao] == numeroAleatorio){
+                                achou = true;
+                                break;
+                           }
+
+                     }
+
+                     if (achou == false) {
+                           segredos.push(numeroAleatorio);
+                           numero++;
+                     }
+              }
+
+        }
+
+        return segredos;
+
+    }
+
+    var segredos = sorteiaNumeros(3);
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+
+       var achou = false;
+
+       for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+              if(input.value == segredos[posicao]) {
+
+                     alert("Você ACERTOU!");
+                     achou = true;
+                     break;
+              } 
+       }
+
+       if(achou == false) {
+
+              alert("Você ERROU!");
+       }
+
+       input.value = "";
+       input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>
+
+
+<!-- 	Aqui montamos um array. Você conta as posições começando do 0.
+	var segredos = [5,7,10,2];
+
+	var segredo se refere ao numero randomico gerado pelo Math.random que deverá ser adivinhado pelo usuário. O Math.round é para arredondar e a multiplicação por 10 é para que o número seja de 0 à 10
+	var segredo = Math.round(Math.random() * 10);
+	
+	var input coleta a informação digitada no <input/> no HTML. A coleta é feita pelo querySelector
+	var input = document.querySelector("input");
+	
+	Aqui criamos uma função para que ela seja chamada em um determinado momento
+    function verifica() {
+		var achou se refere a execução do alert de acerto ou erro. Ela começa como falso, porque o for não foi executado ainda, logo não sabemos se o valor colocado no input corresponde ao array
+		var achou = false;
+		
+	o for diz que o valor de posição é zero, ele tem que ser menor que o tamanho o array e sempre incrementar 1, assim o for vai varrer todas as posições do array procurando o valor do input que o usuario digitou
+		for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+		Aqui temos a lógica que verifica se o usuário acertou ou errou o valor do array
+        if(input.value == segredos[posicao]) {
+		achou = true;
+        alert("Você ACERTOU!");
+		break;
+        } 
+    }
+	if(achou == false) {
+		alert("Você ERROU!!");
+	}
+	input.value = "";
+}
+
+aqui temos uma variável referente ao botão. ele coleta a ação do botão e, quando pressionado (onclick), ele aciona a function verifica
+var button = document.querySelector("button");
+button.onclick = verifica;
+	**/ -->

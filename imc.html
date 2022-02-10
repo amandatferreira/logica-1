@@ -1,0 +1,78 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+	function mostra (frase) {
+		document.write(frase);
+		pulaLinha();
+}
+
+	
+	function calculaImc(altura, peso) {
+
+    return peso / (altura * altura);
+}
+	
+	var nome = prompt("Informe o seu nome");
+	var alturaInformada = prompt(nome + ", Informe sua altura");
+	var pesoInformado = prompt(nome + ", Informe seu peso");
+	
+	var imc = calculaImc(alturaInformada, pesoInformado);
+	
+	mostra(nome + " o seu IMC calculado é " + imc);
+	
+		if (imc < 18.5) {
+		mostra("Seu ICM está abaixo do recomendado.");
+		}
+		
+		if (imc > 35) {
+		mostra("Seu ICM está acima do recomendado.")
+		}
+	
+		if (imc >= 18.5 && imc <= 35) {
+		mostra("Seu ICM está dentro da média. Congrats!");
+		
+		}
+		
+	
+	
+	
+/**************************************************************/	
+	//Exemplo1:
+	//var pesoAmanda = 65;
+	//var alturaAmanda = 1.58;
+	//calculaImc(pesoAmanda, alturaAmanda);
+	
+	//var pesoAmigo = 68;
+	//var alturaAmigo = 1.72;
+	//calculaImc(pesoAmigo, alturaAmigo);
+	
+	//Exemplo2:
+	<!-- function calculaImc(peso, altura) { -->
+	<!-- var imc = peso / (altura * altura); -->
+	<!-- mostra("o ICM calculado é: " + imc); -->
+	<!-- } -->
+
+	<!-- var imcAmanda = calculaImc(65,1.58); -->
+	<!-- var imcAmigo = calculaImc(68,1.72); -->
+	
+	
+	//Exemplo3:
+	<!-- //variavel icmFlavio RECEBE calculaImc// -->
+	<!-- var imcFlavio = calculaImc(1.71, 73); -->
+	<!-- var imcAmigo = calculaImc(1.72, 68); -->
+	<!-- var totalImc = imcFlavio + imcAmigo; -->
+
+	<!-- document.write("A soma dos imc's é = " + totalImc); -->
+
+	<!-- mostra(imcFlavio); -->
+	<!-- mostra(imcAmigo); -->
+	
+</script>
